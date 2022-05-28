@@ -4,11 +4,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="style.css" />
     <title>Code Chrysalis</title>
   </head>
 
   <body>
-    <h1 id="title"></h1>
+    <header>
+      <h1 id="title">New Account</h1>
+    </header>
+    <div class="form-container">
+      <form action="">
+        <label for="name">Name</label>
+        <input type="name" name="name" id="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          min-length="12"
+          pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{12,50}$/"
+          title="12 or more combination of letters, numbers, and symbols"
+          required
+        />
+        <span id="validpw">
+          12 or more combination of letters, numbers, and symbols
+        </span>
+        <label for="verify-password">Password (again)</label>
+        <input type="password" name="verify-password" id="verify-password" />
+        <input type="submit" value="Create Account" id="submit" />
+      </form>
+    </div>
+    <div class="member-link">
+      <a href="">Already have an account? Sign In</a>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
